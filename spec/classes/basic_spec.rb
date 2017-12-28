@@ -19,6 +19,7 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
@@ -42,9 +43,11 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 
@@ -65,9 +68,11 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 
@@ -88,9 +93,11 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 
@@ -111,9 +118,11 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 
@@ -134,9 +143,11 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_class('osquery::install') }
       it { is_expected.to contain_class('osquery::service') }
       it { is_expected.to contain_class('osquery::config') }
+      it { is_expected.to contain_class('osquery::flags') }
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 

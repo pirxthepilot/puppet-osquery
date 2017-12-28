@@ -1,0 +1,4 @@
+<%# ERB template for osquery.flags -%>
+<% scope['osquery::flags'].each do |flag, value| -%>
+--<%= flag %>=<%= value %>
+<% end -%>

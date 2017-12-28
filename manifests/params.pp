@@ -19,6 +19,9 @@ class osquery::params {
     },
   }
 
+  # By default, do not set any flags
+  $flags = {}
+
   $package_name   = 'osquery'
   $service_name   = 'osqueryd'
   $package_ver    = 'latest' # or present
@@ -27,11 +30,13 @@ class osquery::params {
 
   case $::kernel {
     'Windows': {
+      $flags_file   = 'C:\ProgramData\osquery\osquery.flags'
       $config       = 'C:\ProgramData\osquery\osquery.conf'
       $config_user  = 'SYSTEM'
       $config_group = 'Administrators'
     }
     default: {
+      $flags_file   = '/etc/osquery/osquery.flags'
       $config       = '/etc/osquery/osquery.conf'
       $config_user  = 'root'
       $config_group = 'root'
