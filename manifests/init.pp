@@ -74,6 +74,10 @@ class osquery (
   validate_bool($repo_install)
   validate_hash($flags)
 
-  class { '::osquery::install': } -> class { '::osquery::flags': } -> class { '::osquery::config': } -> class { '::osquery::service': } -> Class['::osquery']
+  class { '::osquery::install': }
+  -> class { '::osquery::flags': }
+  -> class { '::osquery::config': }
+  ~> class { '::osquery::service': }
+  -> Class['::osquery']
 
 }

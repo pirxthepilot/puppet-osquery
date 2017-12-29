@@ -57,9 +57,38 @@ class { 'osquery':
 }
 ~~~
 
+### osqueryd flags
+
+The osqueryd startup flags can be configured via `osquery::flags`. Example:
+
+~~~
+class { 'osquery':
+  flags => {
+    'enroll_secret_path'             => '/var/osquery/enroll_secret',
+    'tls_server_certs'               => '/var/osquery/server.pem',
+    'tls_hostname'                   => '192.168.1.100:8080',
+    'host_identifier'                => 'uuid',
+    'enroll_tls_endpoint'            => '/api/v1/osquery/enroll',
+    'config_plugin'                  => 'tls',
+    'config_tls_endpoint'            => '/api/v1/osquery/config',
+    'config_tls_refresh'             => '10',
+    'disable_distributed'            => 'false',
+    'distributed_plugin'             => 'tls',
+    'distributed_interval'           => '3',
+    'distributed_tls_max_attempts'   => '3',
+    'distributed_tls_read_endpoint'  => '/api/v1/osquery/distributed/read',
+    'distributed_tls_write_endpoint' => '/api/v1/osquery/distributed/write',
+    'logger_plugin'                  => 'tls',
+    'logger_tls_endpoint'            => '/api/v1/osquery/log',
+    'logger_tls_period'              => '10',
+  }
+}
+~~~
+
 ## Reference
 
 * `osquery::settings` - hash converted into a JSON string for the OSQuery config file. Default is based on upstream package example config.
+* `osquery::flags` - hash converted into osqueryd arguments in /etc/osquery/osquery.flags. Defaults to an empty hash.
 * `osquery::package_name` - Package name to install. Default is auto detect based on OSFamily.
 * `osquery::service_name` - Service name to run. Default is auto detect based on OSFamily.
 * `osquery::package_ver` - latest or present. Defaults to latest.

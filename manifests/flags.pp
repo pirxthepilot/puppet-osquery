@@ -4,8 +4,6 @@ class osquery::flags (
   $format = 'simple'
 
 ){
-  include '::stdlib'
-
   file { $::osquery::flags_file:
     ensure  => present,
     content => template('osquery/osquery.flags.erb'),

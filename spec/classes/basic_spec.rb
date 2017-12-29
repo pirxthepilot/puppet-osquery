@@ -23,6 +23,7 @@ describe 'osquery', :type => :class do
       it { is_expected.to contain_package('osquery') }
       it { is_expected.to contain_service('osqueryd') }
       it { is_expected.to contain_file('/etc/osquery/osquery.conf') }
+      it { is_expected.to contain_file('/etc/osquery/osquery.flags') }
     end
   end
 
