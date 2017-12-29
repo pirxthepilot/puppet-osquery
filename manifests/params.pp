@@ -32,13 +32,13 @@ class osquery::params {
     'Windows': {
       $flags_file   = 'C:\ProgramData\osquery\osquery.flags'
       $config       = 'C:\ProgramData\osquery\osquery.conf'
-      $config_user  = 'SYSTEM'
+      $config_owner = 'SYSTEM'
       $config_group = 'Administrators'
     }
     default: {
       $flags_file   = '/etc/osquery/osquery.flags'
       $config       = '/etc/osquery/osquery.conf'
-      $config_user  = 'root'
+      $config_owner = 'root'
       $config_group = 'root'
     }
   }
